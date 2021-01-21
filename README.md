@@ -1,16 +1,13 @@
 # StoryBook 추가: 아래 3가지 화면을 가지고 개발 진행함
-
 ## Run the test runner (Jest) in a terminal:
-
 yarn test --watchAll
 
 ## Start the component explorer on port 6006:
-
 yarn storybook
 
 # #Run the frontend app proper on port 3000:
-
 yarn start
+> 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/ 
 
 # Getting Started with Create React App
 
