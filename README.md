@@ -1,11 +1,15 @@
 # StoryBook 추가: 아래 3가지 화면을 가지고 개발 진행함
+
 ## Run the test runner (Jest) in a terminal:
+
 yarn test --watchAll
 
 ## Start the component explorer on port 6006:
+
 yarn storybook
 
 # #Run the frontend app proper on port 3000:
+
 yarn start
 
 # Getting Started with Create React App
@@ -78,3 +82,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## 최초 로컬 커밋과 서버의 history가 맞지 않는 경우
+
+```
+git remote add origin (git URL)
+git pull origin --allow-unrelated-histories
+git push
+```
