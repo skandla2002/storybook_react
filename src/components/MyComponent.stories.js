@@ -16,10 +16,11 @@ import React from 'react';
 //     // 필요한 인자값
 // }
 
+
+// static resource 활용시
 import imageFile from './static/image.png';
 
 export default {
-    // static resource 활용시
     title: 'img'
 };
 
