@@ -1,4 +1,4 @@
-import { createSotre } from "redux";
+import { createStore } from "redux";
 
 export const actions = {
   ARCHIVE_TASK: "ARCHIVE_TASK",
@@ -6,7 +6,7 @@ export const actions = {
 };
 
 export const archiveTask = (id) => ({ type: actions.ARCHIVE_TASK, id });
-export const pinTask = (id) => ({ type: acctions.PIN_TASK, id });
+export const pinTask = (id) => ({ type: actions.PIN_TASK, id });
 
 function taskStateReducer(taskState) {
   return (state, action) => {
@@ -19,7 +19,7 @@ function taskStateReducer(taskState) {
   };
 }
 
-export const reducer = (state, actin) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case actions.ARCHIVE_TASK:
       return taskStateReducer("TASK_ARCHIVED")(state, action);
