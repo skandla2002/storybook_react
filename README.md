@@ -1,13 +1,18 @@
 # StoryBook 추가: 아래 3가지 화면을 가지고 개발 진행함
+
 ## Run the test runner (Jest) in a terminal:
+
 yarn test --watchAll
 
 ## Start the component explorer on port 6006:
+
 yarn storybook
 
 # #Run the frontend app proper on port 3000:
+
 yarn start
-> 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/ 
+
+> 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/
 
 # Getting Started with Create React App
 
@@ -86,4 +91,226 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 git remote add origin (git URL)
 git pull origin --allow-unrelated-histories
 git push
+```
+
+## Sass로 구축 하는 방안 고려 [Link](https://sass-lang.com/guide)
+
+1. Variables / Nesting
+
+- SCSS
+
+```css
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+```
+
+- CSS
+
+```css
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+```
+
+---
+
+2. Modules
+
+- SCSS
+
+```css
+// _base.scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+// styles.scss
+@use 'base';
+
+.inverse {
+  background-color: base.$primary-color;
+  color: white;
+}
+```
+
+- CSS
+
+```css
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+.inverse {
+  background-color: #333;
+  color: white;
+}
+```
+
+3. Mixins
+
+- SCSS
+
+```css
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box {
+  @include transform(rotate(30deg));
+}
+```
+
+- CSS
+
+```css
+.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+```
+
+4. Extend/Inheritance
+
+- SCSS
+
+```css
+/* This CSS will print because %message-shared is extended. */
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+// This CSS won't print because %equal-heights is never extended.
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}
+```
+
+- CSS
+
+```css
+/* This CSS will print because %message-shared is extended. */
+.message,
+.success,
+.error,
+.warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+```
+
+5. Operators
+
+- SCSS
+
+```css
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+```
+
+- CSS
+
+```css
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 31.25%;
+}
 ```
