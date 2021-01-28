@@ -1,18 +1,80 @@
 # StoryBook 추가: 아래 3가지 화면을 가지고 개발 진행함
 
-## Run the test runner (Jest) in a terminal:
+## 설치
 
+```
+# Create our application:
+npx create-react-app taskbox
+
+cd taskbox
+
+# Add Storybook:
+npx -p @storybook/cli sb init
+```
+
+### 실행
+
+```
+# Run the test runner (Jest) in a terminal:
 yarn test --watchAll
 
-## Start the component explorer on port 6006:
-
+# Start the component explorer on port 6006:
 yarn storybook
 
-# #Run the frontend app proper on port 3000:
-
+# Run the frontend app proper on port 3000:
 yarn start
+```
 
-> 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/
+### 추가 설정 파일
+
+- index.css 파일 적용 [LINK](https://github.com/chromaui/learnstorybook-code/blob/master/src/index.css)
+- font, icon 설치
+
+```
+npx degit chromaui/learnstorybook-code/src/assets/font src/assets/font
+npx degit chromaui/learnstorybook-code/src/assets/icon src/assets/icon
+```
+
+### 간단한 컴포넌트 만들기
+
+- CDD(Component-Driven Development) 개발
+
+  > title – task를 설명해주는 문자열
+  > state - 현재 어떤 task가 목록에 있으며, 선택되어 있는지의 여부
+
+- 설정하기
+
+  > src/components/Task.js와 src/components/Task.stories.js을 생성
+
+- default export 생성
+
+  > component -- 해당 컴포넌트,
+  > title -- Storybook 앱의 사이드바에서 컴포넌트를 참조하는 방법,
+  > excludeStories -- Storybook에서 스토리를 내보낼 때 렌더링에서 제외하는 것
+  > argTypes -- 각각의 스토리에서 인수(args)의 행동 방식을 명시합니다.
+
+- 구성
+
+  > Storybook 구성 파일 (.storybook/main.js, preview.js) 변경
+  > 매개변수(parameters)는 일반적으로 Storybook의 기능과 애드온의 동작을 제어하기 위하여 사용됨. 이를 사용하여 actions(mocked callbacks)이 처리되는 방식을 구성함
+
+- States 구현하기
+
+  > src/components/Task.js 내 구현
+
+- 데이터 요구 사항 명시하기
+
+  > PropTypes 사용
+
+- 자동화된 테스트
+  > 스냅샷 테스트[LINK](https://github.com/storybookjs/storybook/tree/master/addons/storyshots)
+  > 아래 addon 추가 후 storybook.test.js 생성 하여 구현, 이후 yarn test로 테스트 실행가능
+
+```
+yarn add -D @storybook/addon-storyshots react-test-renderer
+```
+
+> 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/ko/composite-component/
 
 # Getting Started with Create React App
 
