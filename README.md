@@ -80,6 +80,16 @@ yarn add -D @storybook/addon-storyshots react-test-renderer
   > taskList.js, taskList.stories.js 생성
   > 데코레이터(Decorators)는 스토리에 임의의 래퍼(wrapper)를 제공하는 한 방법입니다. 위의 예시에서 우리는 데코레이터 `key`를 사용하여 기본 내보내기에서 렌더링 된 컴포넌트에 `padding`을 추가합니다. 또한 데코레이터는 “providers”(React context를 설정하는 라이브러리 컴포넌트)에서 스토리를 감싸 줄 때 사용될 수 있습니다.
 
+### 데이터 연계
+
+- 리덕스로 데이터 연계(컨테이너 컴포넌트 패턴)
+
+```
+yarn add react-redux redux
+```
+
+- src/app.js에 연결하여 컴포넌트 완료
+
 > 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/ko/composite-component/
 
 # Getting Started with Create React App

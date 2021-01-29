@@ -9,6 +9,7 @@ export const archiveTask = (id) => ({ type: actions.ARCHIVE_TASK, id });
 export const pinTask = (id) => ({ type: actions.PIN_TASK, id });
 
 function taskStateReducer(taskState) {
+  console.log(taskState);
   return (state, action) => {
     return {
       ...state,
