@@ -90,6 +90,8 @@ yarn add react-redux redux
 
 - src/app.js에 연결하여 컴포넌트 완료
 
+### 화면 구성하기
+
 > 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/ko/composite-component/
 
 # Getting Started with Create React App
