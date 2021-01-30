@@ -136,10 +136,17 @@ jobs:
 
 
 ### 테스트
+
+1. 아래 3개는 기본이지만 부족함
 - 수동 테스트
 - 스냅샷 테스트
 - 단위 테스트
+
+2. 추가 아래 테스트 필요
 - 시각적 테스트
+```
+ git checkout -b change-task-background
+```
 
 # Getting Started with Create React App
 
