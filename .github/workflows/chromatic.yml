@@ -18,5 +18,5 @@ jobs:
         with:
           # our project token, to see how to obtain it
           # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
-          projectToken: 21eb26f888b7
+          projectToken: STORYBOOKE_DEPLOY
           token: ${{ secrets.GITHUB_TOKEN }}

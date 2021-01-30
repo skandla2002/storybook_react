@@ -103,11 +103,36 @@ yarn build-storybook
 yarn add -D chromatic
 ```
 > 설치 후 https://www.chromatic.com 에서 github 연결 및 project-token 받기,  GitHub secrets[Link](https://docs.github.com/en/actions/reference/encrypted-secrets) 을 사용하면 푸시할때 바로 빌드되는 구조로 사용 가능
-> 실행
+> 실행(빌드 배포 하기)
 `yarn chromatic --project-token=<project-token>`
 > 결과 링크 받아서 공유 하기
 
-> Storybook을 배포하기 위해 GitHub 액션 추가하기
+> Storybook을 배포하기 위해 GitHub 액션 추가하기(위 수동 실행이 아닌 git push 후 자동 실행을 위해 .github/workflows/chromatic.yml 폴더 및 파일 생성)
+> > project-token을 github screte에 생성 후 그 이름(STORYBOOKE_DEPLOY)을 넣는다.
+```yml
+# .github/workflows/chromatic.yml
+# name of our action
+name: 'Chromatic Deployment'
+# the event that will trigger the action
+on: push
+
+# what the action will do
+jobs:
+  test:
+    # the operating system it will run on
+    runs-on: ubuntu-latest
+    # the list of steps that the action will go through
+    steps:
+      - uses: actions/checkout@v1
+      - run: yarn
+      - uses: chromaui/action@v1
+        # options required to the GitHub chromatic action
+        with:
+          # our project token, to see how to obtain it
+          # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
+          projectToken: project-token
+          token: ${{ secrets.GITHUB_TOKEN }}
+```
 
 
 ### 테스트
