@@ -19,5 +19,5 @@ jobs:
           # our project token, to see how to obtain it
           # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
           projectToken: project-token
-          token: ${{ storybooke_deploy }}
+          token: storybooke_deploy
           # github내 project token 저장해두고 이름을 연결함

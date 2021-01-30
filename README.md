@@ -102,7 +102,7 @@ yarn build-storybook
 ```
 yarn add -D chromatic
 ```
-> 설치 후 https://www.chromatic.com 에서 github 연결 및 project-token 받기,  GitHub secrets 을 사용하면 간단히 사용 가능
+> 설치 후 https://www.chromatic.com 에서 github 연결 및 project-token 받기,  GitHub secrets[Link](https://docs.github.com/en/actions/reference/encrypted-secrets) 을 사용하면 푸시할때 바로 빌드되는 구조로 사용 가능
 > 실행
 `yarn chromatic --project-token=<project-token>`
 > 결과 링크 받아서 공유 하기
@@ -110,7 +110,11 @@ yarn add -D chromatic
 > Storybook을 배포하기 위해 GitHub 액션 추가하기
 
 
-> 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/ko/composite-component/
+### 테스트
+- 수동 테스트
+- 스냅샷 테스트
+- 단위 테스트
+- 시각적 테스트
 
 # Getting Started with Create React App
 
