@@ -1,5 +1,5 @@
 # StoryBook 추가: 아래 3가지 화면을 가지고 개발 진행함
-
+- https://6015158de6c64a00219bd169-qarswetxxa.chromatic.com/
 ## 설치
 
 ```
@@ -144,9 +144,18 @@ jobs:
 
 2. 추가 아래 테스트 필요
 - 시각적 테스트
+> 최초에는 브랜치 생성, 이후 내용 수정 후 커밋 / 푸쉬
 ```
  git checkout -b change-task-background
 ```
+> Pull Request에서 확인 후 머지
+> Create pull request
+> 완료 후 git-hub 화면내 UI Test 버튼 클릭함
+> 두개의 화면 변화가 맞으면 Accept 함
+
+### 애드온
+> 데이터 넣고 화면 깨짐 현상 확인 후 개선
+> 이후 조치 + stories.js내 스토리 추가
 
 # Getting Started with Create React App
 
