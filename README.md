@@ -98,6 +98,17 @@ yarn add react-redux redux
 yarn build-storybook
 // 실행하면 storybook-static 디렉터리에 정적인 Storybook이 생성
 ```
+> chromatic에 배포하기
+```
+yarn add -D chromatic
+```
+> 설치 후 https://www.chromatic.com 에서 github 연결 및 project-token 받기,  GitHub secrets 을 사용하면 간단히 사용 가능
+> 실행
+`yarn chromatic --project-token=<project-token>`
+> 결과 링크 받아서 공유 하기
+
+> Storybook을 배포하기 위해 GitHub 액션 추가하기
+
 
 > 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/ko/composite-component/
 
