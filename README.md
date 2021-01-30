@@ -92,6 +92,13 @@ yarn add react-redux redux
 
 ### 화면 구성하기
 
+### 배포하기
+> 빌드하기
+```node
+yarn build-storybook
+// 실행하면 storybook-static 디렉터리에 정적인 Storybook이 생성
+```
+
 > 할 차례: https://www.learnstorybook.com/intro-to-storybook/react/ko/composite-component/
 
 # Getting Started with Create React App
