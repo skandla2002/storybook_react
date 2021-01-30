@@ -38,3 +38,13 @@ Archived.args = {
     state: "TASK_ARCHIVED",
   },
 };
+
+const longTitleString = 'Loooooooooooooooooooooooooooooon Titleeeeeeeeeeeeeeeeeeeeeeeeeeee is Meeeeeeeeeeeeeeeeeeeeee!!!!!!!!';
+
+export const LongTitle = Template.bind({});
+LongTitle.args= {
+  task: {
+    ...Default.args.task,
+    title: longTitleString
+  }
+}
