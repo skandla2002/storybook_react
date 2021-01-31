@@ -7,6 +7,7 @@ import "./index.css";
 
 function App() {
   return (
+    // store는 프로젝트 1개당 1개만 유지함(Redux의 원칙)
     <Provider store={store}>
       <InboxScreen />
     </Provider>
